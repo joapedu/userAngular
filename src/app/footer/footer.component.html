@@ -1,0 +1,29 @@
+<footer class="br-footer pt-3" id="footer">
+  <div class="container-lg">
+    <div class="d-none d-sm-block">
+      <div class="row align-items-end justify-content-between">
+        <div class="col social-network">
+          <p class="text-up-01 text-extra-bold text-uppercase">
+            {{ social.label }}
+          </p>
+          <a
+            *ngFor="let item of social.networks"
+            class="mr-3"
+            [href]="item.href"
+            [target]="item.target"
+          >
+            <img [src]="item.image" [alt]="item.description" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="br-divider my-3"></span>
+  <div class="container-lg">
+    <div class="info">
+      <div class="text-down-01 text-medium pb-3">
+        {{ license }}
+      </div>
+    </div>
+  </div>
+</footer>

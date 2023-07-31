@@ -1,0 +1,23 @@
+<div class="br-breadcrumb">
+  <ul class="crumb-list">
+    <li
+      *ngFor="let crumb of crumbs; let first = first; let last = last"
+      [ngClass]="{ home: first }"
+      class="crumb"
+      [attr.data-active]="last ? 'active' : null"
+    >
+      <div *ngIf="first" class="br-button circle">
+        <span class="sr-only">{{ crumb.label }}</span>
+        <i class="icon fas fa-home"></i>
+      </div>
+      <ng-container *ngIf="!first && !last">
+        <i class="icon fas fa-chevron-right"></i>
+        <a [href]="crumb.href">{{ crumb.label }}</a>
+      </ng-container>
+      <ng-container *ngIf="last">
+        <i class="icon fas fa-chevron-right"></i>
+        <span>{{ crumb.label }}</span>
+      </ng-container>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,88 @@
+<div class="menu-container">
+  <div class="menu-panel">
+    <div class="menu-header">
+      <div class="menu-close">
+        <button
+          class="br-button circle"
+          type="button"
+          aria-label="Fechar o menu"
+          data-dismiss="menu"
+        >
+          <i class="fas fa-times" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <nav class="menu-body">
+      <ng-container *ngFor="let lvl1 of menuItems">
+        <ng-container
+          *ngIf="!lvl1.children"
+          [ngTemplateOutlet]="menuItem"
+          [ngTemplateOutletContext]="{ $implicit: lvl1 }"
+        >
+        </ng-container>
+        <ng-container
+          *ngIf="lvl1.children"
+          [ngTemplateOutlet]="menuFolder"
+          [ngTemplateOutletContext]="{ $implicit: lvl1 }"
+        >
+        </ng-container>
+      </ng-container>
+    </nav>
+  </div>
+</div>
+
+<!-- Para facilitar o reaproveitamento separamos o código nesses templates -->
+<ng-template #menuFolder let-item>
+  <div class="menu-folder">
+    <ng-container
+      [ngTemplateOutlet]="menuItem"
+      [ngTemplateOutletContext]="{ $implicit: item }"
+    >
+    </ng-container>
+    <ng-container
+      *ngIf="item.children"
+      [ngTemplateOutlet]="menuList"
+      [ngTemplateOutletContext]="{ $implicit: item.children }"
+    >
+    </ng-container>
+  </div>
+</ng-template>
+
+<ng-template #menuList let-itemList>
+  <ul>
+    <li
+      [ngClass]="{ 'side-menu': child.children }"
+      *ngFor="let child of itemList"
+    >
+      <ng-container
+        [ngTemplateOutlet]="menuItem"
+        [ngTemplateOutletContext]="{ $implicit: child }"
+      ></ng-container>
+      <ng-container *ngIf="child.children">
+        <ng-container
+          [ngTemplateOutlet]="menuList"
+          [ngTemplateOutletContext]="{ $implicit: child.children }"
+        ></ng-container>
+      </ng-container>
+    </li>
+  </ul>
+</ng-template>
+
+<ng-template #menuItem let-item>
+  <a class="menu-item">
+    <span class="icon">
+      <i class="fas" [class]="item.iconClass" aria-hidden="true"></i>
+    </span>
+    <span class="content">{{ item.label }}</span>
+  </a>
+</ng-template>
+
+<ng-template #link let-item>
+  <a
+    class="menu-item"
+    [href]="item.href"
+    [target]="item.target ? item.target : '_blank'"
+  >
+    <span class="content">{{ item.label }}</span>
+  </a>
+</ng-template>

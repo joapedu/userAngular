@@ -1,0 +1,6 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+if ! git diff HEAD^ HEAD --exit-code -- ./package-lock.json; then
+  npm install
+fi
