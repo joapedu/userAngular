@@ -3,18 +3,18 @@ import { Component } from "@angular/core";
 @Component({
   selector: "br-footer",
   templateUrl: "./footer.component.html",
+  styleUrls: ['./footer.component.css']
 })
 export class BrFooterComponent {
   license =
-    "Todo o conteúdo deste site está publicado sob a licença CC0 1.0 Universal";
+    "Feito por João Eduardo Braga, todo o conteúdo deste site está publicado sob MIT LICENSE";
 
   social = {
-    label: "Redes Sociais",
     networks: [
       {
-        href: "https://discord.gg/U5GwPfqhUP",
-        image: "assets/discord.svg",
-        description: "Discord",
+        href: "https://github.com/joapedu/userAngular",
+        image: "assets/branco.png",
+        description: "logo",
         target: "_blank",
       },
     ],

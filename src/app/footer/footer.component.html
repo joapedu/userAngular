@@ -2,9 +2,9 @@
   <div class="container-lg">
     <div class="d-none d-sm-block">
       <div class="row align-items-end justify-content-between">
-        <div class="col social-network">
+        <div class="col social-network" style="text-align: center;">
           <p class="text-up-01 text-extra-bold text-uppercase">
-            {{ social.label }}
+             
           </p>
           <a
             *ngFor="let item of social.networks"
@@ -12,7 +12,7 @@
             [href]="item.href"
             [target]="item.target"
           >
-            <img [src]="item.image" [alt]="item.description" />
+            <img src="../../assets/branco.png" alt="Logo"/>
           </a>
         </div>
       </div>
