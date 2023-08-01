@@ -1,0 +1,24 @@
+h2 {
+  margin-bottom: 10px;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+button {
+  cursor: pointer;
+}
+button:hover{
+
+}
+
+input{
+  width: 50%;
+  position: relative;
+  right: -50%;
+}
+
+#title {
+  width: 30%;
+}

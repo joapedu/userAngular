@@ -5,13 +5,13 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'br-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit{
   posts: any[] =[];
   filteredPosts: any[] = [];
   currentPage = 1;
-  pageSize = 5;
+  pageSize = 4;
   searchText = '';
 
   constructor(private postService: PostService, private router: Router) { }

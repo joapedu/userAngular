@@ -18,10 +18,9 @@ export class DetalhesComponent implements OnInit {
   ngOnInit() {
     const postId = this.route.snapshot.paramMap.get('id');
     if (postId !== null) {
-      this.loadPost(+postId); // Converte para número somente se postId não for nulo
+      this.loadPost(+postId);
     } else {
-      // Lógica de tratamento caso o postId seja nulo
-      console.log("erro no postId");
+      console.log("erro postId");
     }
   }
 

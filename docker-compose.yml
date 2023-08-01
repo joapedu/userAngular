@@ -1,0 +1,8 @@
+version: '3.3'
+
+services:
+  sinda-front-joao:
+    image: sinda-front-joao
+    build: .
+    ports:
+      - '8081:80'
