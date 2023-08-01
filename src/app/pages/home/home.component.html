@@ -1,20 +1,21 @@
 <div class="container">
   <h2>Posts</h2>
   <input type="text" [(ngModel)]="searchText" (keyup)="searchPosts()" class="form-control mb-3" placeholder="Search by title">
-  <div class="row">
-    <div class="col-md-6 mb-4" *ngFor="let post of filteredPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize)">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">{{ post.title }}</h5>
-          <p class="card-text">{{ post.body }}</p>
-        </div>
-        <div class="card-footer">
-          <button class="btn btn-primary" (click)="viewPostDetails(post.id)">View Details</button>
+  <div class="container border-solid-md border-blue-60 rounder-all shadow-lg-up bg-pure-0 mb-5 mt-5">
+    <div class="row">
+      <div class="col-md-6 mt-3 mb-3" *ngFor="let post of filteredPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize)">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ post.title }}</h5>
+            <p class="card-text">{{ post.body }}</p>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary-" (click)="viewPostDetails(post.id)">View Details</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="pagination">
     <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1" class="btn btn-secondary">Previous</button>
     <button (click)="currentPage = currentPage + 1" [disabled]="currentPage === filteredPosts.length / pageSize" class="btn btn-secondary">Next</button>

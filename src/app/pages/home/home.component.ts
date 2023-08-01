@@ -31,11 +31,12 @@ export class HomeComponent implements OnInit{
     if (!this.searchText) {
       this.filteredPosts = this.posts;
     } else {
-      this.postService.getTitlePost(this.searchText).subscribe(filteredPosts => {
-        this.filteredPosts = filteredPosts.length > 0 ? filteredPosts : [{ title: 'Post não encontrado', body: '' }];
-      });
+      const postId = Number(this.searchText);
+      const foundPost = this.posts.find(post => post.id === postId);
+      this.filteredPosts = foundPost ? [foundPost] : [{ title: 'Post não encontrado', body: '' }];
     }
   }
+
 
   viewPostDetails(postId: number) {
     this.router.navigate(['/post', postId]);
