@@ -10,8 +10,8 @@ export class BrMenuComponent implements AfterViewInit {
 
   menuItems = [
     {
-      iconClass: "fa-home",
-      label: "Home",
+      iconClass: "fa-bell",
+      label: "Nível 1",
     },
     {
       iconClass: "fa-cubes",

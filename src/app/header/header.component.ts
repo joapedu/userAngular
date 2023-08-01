@@ -10,10 +10,4 @@ export class BrHeaderComponent {
     src: "../../assets/branco.png",
     alt: "logo",
   };
-
-  isMenuOpen: boolean = false;
-
-  toggleMenu() {
-    this.isMenuOpen = !this.isMenuOpen;
-  }
 }
