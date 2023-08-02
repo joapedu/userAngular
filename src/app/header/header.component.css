@@ -1,0 +1,22 @@
+#sobre{
+  font-size: 170%;
+}
+
+.sob{
+  font-size: 120%;
+  right: 0;
+  margin-top:1%;
+}
+
+@media (min-width: 1279px) {
+  #drop {
+    visibility: hidden;
+    position: absolute;
+  }
+}
+@media (min-width: 1280px) {
+  .sob {
+    visibility: hidden;
+    position: absolute;
+  }
+}

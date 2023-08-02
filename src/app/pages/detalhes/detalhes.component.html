@@ -1,7 +1,17 @@
-<div class="col border-not-bottom d-inline-flex rounder-top shadow-md-up bg-blue-60 border-blue-20">
-     <span class="text-up-02 d-inline-flex my-2xh ml-6 text-weight-bold text-gray-cool-1">Post ID: {{ post?.id }}</span>
+<div class="br-breadcrumb">
+  <ul class="crumb-list">
+    <li class="crumb home"><a class="br-button circle" href="/"><span class="sr-only">Página inicial</span><i class="fas fa-home"></i></a></li>
+    <li class="crumb" data-active="active"><i class="icon fas fa-chevron-right"></i><span>Dashboard do Post {{post?.id}}</span>
+    </li>
+  </ul>
 </div>
-<div class="container border-solid-md border-blue-60 rounder-all shadow-lg-up bg-pure-0 mb-5 mt-5">
-<h2>{{ post?.title }}</h2>
-<p>{{ post?.body }}</p>
+
+
+<div class="container-lg"><div id="title" class="bg-blue-20 rounder-sm py-2 shadow-lg-up mt-5">
+  <span class="text-up-02 text-weight-semi-bold ml-4">Post ID {{post?.id}}</span>
+</div>
+<div class="container rounder-sm border-solid-md border-blue-60 shadow-xl bg-pure-0 mb-6" style="text-align: center">
+<p id="titulo" class="text-up-03 mt-5 align-self-center text-weight-semi-bold">{{ post?.title }}</p>
+<p id="body" class="text-down-06 mt-4 mb-6">{{ post?.body }}</p>
+</div>
 </div>

@@ -1,16 +1,16 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6">
-      <div id="title" class="bg-blue-20 rounder-sm py-2 shadow-md mt-6 ml-3">
+    <div class="col">
+      <div id="title" class="bg-blue-20 rounder-sm py-2 shadow-lg-up mt-6 ml-3">
         <span class="text-up-02 text-weight-semi-bold ml-4">POSTS</span>
       </div>
     </div>
-    <div class="col-md-6 mt-6" *ngIf="currentPage === 1">
-      <input type="text" [(ngModel)]="searchText" (keyup)="searchPosts()" class="form-control" placeholder="Procura pelo ID">
+    <div class="col" *ngIf="currentPage === 1">
+      <input type="text" [(ngModel)]="searchText" (keyup)="searchPostsId()" class="form-control mt-6 mr-3" placeholder="Busca pelo ID">
     </div>
   </div>
 
-  <div class="container border-solid-md border-blue-60 rounder-sm shadow-lg bg-pure-0 mb-5">
+  <div class="container border-solid-md border-blue-60 rounder-sm shadow-xl bg-pure-0 mb-5">
     <div class="row">
       <div class="col-md-6 mt-3 mb-3" *ngFor="let post of filteredPosts.slice((currentPage - 1) * pageSize, currentPage * pageSize)">
         <div class="card">
@@ -18,15 +18,15 @@
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text">{{ post.body }}</p>
           </div>
-          <div class="card-footer">
-            <button class="btn btn-secundary" (click)="viewPostDetails(post.id)">View Details</button>
+          <div class="card-footer" *ngIf="button">
+            <button class="br-button" type="button" (click)="viewPostDetails(post.id)">View Details</button>
           </div>
         </div>
       </div>
     </div>
   </div>
   <div class="pagination">
-    <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1" class="br-button secondary mr-1 mb-3" type="button">Previous</button>
-    <button (click)="currentPage = currentPage + 1" [disabled]="currentPage === filteredPosts.length / pageSize" class="br-button secondary mr-1 mb-3" type="button">Next</button>
+    <button (click)="currentPage = currentPage - 1" [disabled]="currentPage === 1" class="br-button secondary mr-1 mb-3" type="button">Anterior</button>
+    <button (click)="currentPage = currentPage + 1" [disabled]="currentPage === filteredPosts.length / pageSize" class="br-button secondary ml-3 mr-1 mb-3" type="button">Próximo</button>
   </div>
 </div>

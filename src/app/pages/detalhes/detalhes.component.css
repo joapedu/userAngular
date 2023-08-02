@@ -1,0 +1,27 @@
+.container-lg{
+  height: 50vh;
+}
+#title {
+  width: 13%;
+  position: relative;
+  left: 10%;
+}
+
+#titulo{
+  text-transform: uppercase;
+  width: 100%;
+  position: relative;
+}
+
+@media (max-width: 945px) {
+  #title {
+    width: 25%;
+    left: 6%;
+  }
+}
+@media (max-width: 450px) {
+  #title {
+    width: 40%;
+    left: 6%;
+  }
+}

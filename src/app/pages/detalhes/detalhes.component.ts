@@ -5,7 +5,7 @@ import { PostService } from '../../services/post.service';
 @Component({
   selector: 'br-detalhes',
   templateUrl: './detalhes.component.html',
-  styleUrls: ['./detalhes.component.scss']
+  styleUrls: ['./detalhes.component.css']
 })
 export class DetalhesComponent implements OnInit {
   post: any;

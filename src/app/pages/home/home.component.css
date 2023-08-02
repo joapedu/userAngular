@@ -9,16 +9,20 @@ h2 {
 button {
   cursor: pointer;
 }
-button:hover{
-
-}
 
 input{
   width: 50%;
   position: relative;
   right: -50%;
+  bottom: 0;
 }
 
 #title {
   width: 30%;
+  position: relative;
+}
+@media (max-width: 991px) {
+  #title {
+    width: 90%;
+  }
 }
