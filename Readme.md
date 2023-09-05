@@ -2,7 +2,7 @@
 <img src="./src/assets/branco.png" style="max-width: 35%">
 </div>
 
-#### Exercicio prático do processo de seleção, com intuito de acessar o conteúdo [guia](https://jsonplaceholder.typicode.com/guide) e listar uma página com endpoint: [API](https://jsonplaceholder.typicode.com/posts)
+#### Exercicio prático, com intuito de acessar o conteúdo [guia](https://jsonplaceholder.typicode.com/guide) e listar uma página com endpoint: [API](https://jsonplaceholder.typicode.com/posts)
 - Foi utilizado o **Angular** framework no projeto ao lado do **Docker**.
 - Foram realizadas 3 rotas de acesso do usuário:
   - Página Inicial
